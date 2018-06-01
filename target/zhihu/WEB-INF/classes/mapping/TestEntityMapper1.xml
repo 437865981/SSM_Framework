@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fx.dao.TestDao">
+    <resultMap id="BaseResultMap" type="com.fx.entity.TestEntity">
+        <id column="唯一ID" property="id" jdbcType="INTEGER" />
+        <result column="用户名" property="userName" jdbcType="VARCHAR" />
+        <result column="密码" property="password" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id = "Base_Column_List">
+        唯一ID, 用户名, 密码
+    </sql>
+
+    <!--
+        #  相当于 ?  防止sql注入
+        $  取值，相当于 "123"
+    -->
+
+    <!--增
+        useGeneratedKeys：必须设置为true，否则无法获取到主键id。
+        keyProperty：设置为POJO对象的主键id属性名称。
+        keyColumn：设置为数据库记录的主键id字段名称
+    -->
+    <insert id="addTestEntity"  useGeneratedKeys="true" keyProperty="id"  parameterType="com.fx.entity.TestEntity">
+        INSERT INTO 测试表 VALUES (#{userName},#{password})
+    </insert>
+
+    <!--删-->
+    <delete id="delTestEntityById"  parameterType="java.lang.Integer">
+        DELETE FROM 测试表 WHERE 唯一ID = #{id}
+    </delete>
+
+    <!--改-->
+    <update id="modifyTestEntity"  parameterType="com.fx.entity.TestEntity">
+        UPDATE 测试表 SET 用户名 = #{userName},密码  = #{password} WHERE 唯一ID = #{id}
+    </update>
+
+    <!--查（ID）-->
+    <select id="queryTestEntityById" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+        SELECT <include refid="Base_Column_List"></include> FROM 测试表 WHERE 唯一ID = #{id}
+    </select>
+
+    <!--查（所有）-->
+   <select id="queryAllTestEntity"  resultMap="BaseResultMap" >
+        SELECT <include refid="Base_Column_List"></include> FROM 测试表
+    </select>
+</mapper>
