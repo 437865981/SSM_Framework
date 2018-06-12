@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="SSM_Framework:war exploded">
+  <artifact type="exploded-war" name="SSM:war exploded">
     <output-path>$PROJECT_DIR$/target/zhihu</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="SSM_Framework" />
+          <element id="module-output" name="SSM" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: junit:junit:4.11" />
@@ -53,7 +53,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/zhihu/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="SSM_Framework/web/Web" />
+      <element id="javaee-facet-resources" facet="SSM/web/Web" />
     </root>
   </artifact>
 </component>
