@@ -235,6 +235,13 @@
       <artifactId>spring-data-redis</artifactId>
       <version>1.7.2.RELEASE</version>
     </dependency>
+  <!--HttpServletRequest  和 HttpServletResponse 所需要的依赖包，tomcat中有 provided防止与其冲突-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
 
