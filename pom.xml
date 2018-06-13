@@ -229,12 +229,14 @@
       <artifactId>jedis</artifactId>
       <version>2.9.0</version>
     </dependency>
+
     <!-- redis Spring 基于注解配置 -->
     <dependency>
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-redis</artifactId>
       <version>1.7.2.RELEASE</version>
     </dependency>
+
   <!--HttpServletRequest  和 HttpServletResponse 所需要的依赖包，tomcat中有 provided防止与其冲突-->
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -242,7 +244,18 @@
       <version>2.5</version>
       <scope>provided</scope>
     </dependency>
+
+    <!-- quartz 定时任务-->
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+
+
   </dependencies>
+
+
 
 
 
